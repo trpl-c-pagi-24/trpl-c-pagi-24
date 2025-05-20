@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRPL C PAGI - Politeknik Negeri Batam</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="images/logos/polibatam-logo.png" alt="Polibatam Logo" class="h-10">
+                <div>
+                    <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">TRPL C PAGI</h1>
+                    <p class="text-xs text-gray-400">Angkatan 2024</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="nav-link hover:text-blue-400 transition">Prodi & Jurusan</a>
+                <a href="#members" class="nav-link hover:text-blue-400 transition">Anggota</a>
+                <a href="#projects" class="nav-link hover:text-blue-400 transition">Project</a>
+                <a href="#location" class="nav-link hover:text-blue-400 transition">Lokasi</a>
+            </nav>
+            
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-gray-800 z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl">
+        <div class="p-4 flex justify-end">
+            <button id="close-btn" class="text-2xl focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-6 p-6">
+            <a href="#home" class="nav-link hover:text-blue-400 transition">Home</a>
+            <a href="#about" class="nav-link hover:text-blue-400 transition">Prodi & Jurusan</a>
+            <a href="#members" class="nav-link hover:text-blue-400 transition">Anggota</a>
+            <a href="#projects" class="nav-link hover:text-blue-400 transition">Project</a>
+            <a href="#location" class="nav-link hover:text-blue-400 transition">Lokasi</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate__animated animate__fadeInLeft">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">TRPL C PAGI</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">Angkatan 2024 - Politeknik Negeri Batam</p>
+                    <p class="text-gray-400 mb-8 max-w-lg">Kelas Teknologi Rekayasa Perangkat Lunak dengan semangat kolaborasi dan inovasi untuk menciptakan solusi digital masa depan.</p>
+                    <div class="flex space-x-4">
+                        <a href="#members" class="btn-primary">Lihat Anggota</a>
+                        <a href="#projects" class="btn-secondary">Project Kami</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate__animated animate__fadeInRight">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
+                        <img src="images/class-photo.jpg" alt="Foto Kelas TRPL C PAGI" class="w-full h-auto aspect-[19/6] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <p class="text-sm text-blue-300">TRPL C PAGI - Kelas dengan semangat kolaborasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-900 to-transparent z-10"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center animate__animated animate__fadeIn">Tentang <span class="text-blue-400">Prodi & Jurusan</span></h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate__animated animate__fadeInLeft">
+                        <img src="images/logos/trpl-logo.png" alt="Logo TRPL" class="w-32 h-32 mb-6 mx-auto">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-400">Teknologi Rekayasa Perangkat Lunak</h3>
+                        <p class="text-gray-300 mb-4">Program Studi Teknologi Rekayasa Perangkat Lunak (TRPL) di Politeknik Negeri Batam dirancang untuk menghasilkan lulusan yang kompeten dalam pengembangan perangkat lunak dengan pendekatan rekayasa.</p>
+                        <p class="text-gray-300 mb-6">Kurikulum kami mencakup pengembangan aplikasi web dan mobile, basis data, kecerdasan buatan, keamanan siber, dan manajemen proyek perangkat lunak.</p>
+                        <div class="bg-gray-700 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2">Kompetensi Lulusan:</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300">
+                                <li>Mengembangkan aplikasi berbasis web dan mobile</li>
+                                <li>Merancang dan mengelola basis data</li>
+                                <li>Menerapkan prinsip DevOps dalam pengembangan perangkat lunak</li>
+                                <li>Melakukan pengujian dan penjaminan kualitas perangkat lunak</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="animate__animated animate__fadeInRight">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Jurusan Informatika</h3>
+                        <p class="text-gray-300 mb-4">Jurusan Informatika di Politeknik Negeri Batam merupakan salah satu jurusan unggulan yang fokus pada penerapan teknologi informasi dalam berbagai bidang.</p>
+                        <p class="text-gray-300 mb-6">Selain TRPL, jurusan ini juga memiliki program studi lain seperti Teknik Komputer dan Jaringan, serta Sistem Informasi, menciptakan ekosistem belajar yang kolaboratif dan interdisipliner.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
+                                <h4 class="font-bold text-blue-400 mb-2">Visi</h4>
+                                <p class="text-sm text-gray-300">Menjadi program studi unggulan dalam bidang rekayasa perangkat lunak yang berorientasi pada kebutuhan industri dan kewirausahaan.</p>
+                            </div>
+                            <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
+                                <h4 class="font-bold text-purple-400 mb-2">Misi</h4>
+                                <p class="text-sm text-gray-300">Menyelenggarakan pendidikan vokasi yang berkualitas, melaksanakan penelitian terapan, dan pengabdian masyarakat di bidang rekayasa perangkat lunak.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-0.5 rounded-lg">
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <h4 class="font-bold mb-2">Prospek Karir</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Software Developer</span>
+                                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Web Developer</span>
+                                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Mobile Developer</span>
+                                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">DevOps Engineer</span>
+                                    <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">QA Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Members Section -->
+        <section id="members" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Anggota <span class="text-blue-400">Kelas</span></h2>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12">Kenali anggota kelas TRPL C PAGI angkatan 2024 yang penuh dengan bakat dan kreativitas.</p>
+                
+                <!-- Ketua Kelas -->
+                <div class="mb-16">
+                    <h3 class="text-xl font-bold mb-6 text-center text-purple-400">Ketua Kelas</h3>
+                    <div class="max-w-2xl mx-auto bg-gray-800 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
+                        <div class="md:flex">
+                            <div class="md:w-1/3">
+                                <img src="images/members/member1.jpg" alt="Ketua Kelas" class="w-full h-full object-cover aspect-square">
+                            </div>
+                            <div class="md:w-2/3 p-6">
+                                <h4 class="text-2xl font-bold mb-2">Nama Ketua Kelas</h4>
+                                <p class="text-blue-400 mb-4">Ketua TRPL C PAGI 2024</p>
+                                <p class="text-gray-300 mb-4 italic">"Memimpin dengan contoh, bukan dengan perintah."</p>
+                                <p class="text-gray-400 mb-6">Bertanggung jawab memimpin kelas dan menjadi penghubung antara dosen dengan mahasiswa. Memastikan kegiatan kelas berjalan lancar dan kondusif.</p>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Anggota Kelas -->
+                <h3 class="text-xl font-bold mb-6 text-center text-blue-400">Anggota Kelas</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Anggota 1 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/members/member2.jpg" alt="Anggota 1">
+                        </div>
+                        <div class="member-info">
+                            <h4>Nama Anggota 1</h4>
+                            <p class="text-gray-400 italic">"Kode adalah puisi yang bisa dijalankan."</p>
+                            <div class="member-social">
+                                <a href="#"><img src="images/logos/instagram.svg" alt="Instagram"></a>
+                                <a href="#"><img src="images/logos/github.svg" alt="GitHub"></a>
+                                <a href="#"><img src="images/logos/linkedin.svg" alt="LinkedIn"></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Anggota 2 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/members/member3.jpg" alt="Anggota 2">
+                        </div>
+                        <div class="member-info">
+                            <h4>Nama Anggota 2</h4>
+                            <p class="text-gray-400 italic">"Bug bukan error, itu fitur yang belum didokumentasikan."</p>
+                            <div class="member-social">
+                                <a href="#"><img src="images/logos/instagram.svg" alt="Instagram"></a>
+                                <a href="#"><img src="images/logos/github.svg" alt="GitHub"></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tambahkan 27 anggota lainnya dengan pola yang sama -->
+                    <!-- ... -->
+                    
+                    <!-- Anggota 30 -->
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/members/member30.jpg" alt="Anggota 30">
+                        </div>
+                        <div class="member-info">
+                            <h4>Nama Anggota 30</h4>
+                            <p class="text-gray-400 italic">"First, solve the problem. Then, write the code."</p>
+                            <div class="member-social">
+                                <a href="#"><img src="images/logos/github.svg" alt="GitHub"></a>
+                                <a href="#"><img src="images/logos/linkedin.svg" alt="LinkedIn"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Project <span class="text-purple-400">Kami</span></h2>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12">Beberapa project yang telah kami kerjakan selama belajar di TRPL Polibatam.</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400/1e293b/64748b?text=Web+App" alt="Project 1">
+                        </div>
+                        <div class="project-content">
+                            <h3>Aplikasi Manajemen Tugas</h3>
+                            <p class="text-gray-400">Aplikasi web untuk manajemen tugas kelompok dengan fitur real-time collaboration.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <a href="#" class="project-link">Lihat Detail</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400/1e293b/64748b?text=Mobile+App" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3>Aplikasi Catatan Keuangan</h3>
+                            <p class="text-gray-400">Aplikasi mobile untuk mencatat pengeluaran dan pemasukan harian dengan visualisasi data.</p>
+                            <div class="project-tech">
+                                <span>Flutter</span>
+                                <span>Firebase</span>
+                            </div>
+                            <a href="#" class="project-link">Lihat Detail</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400/1e293b/64748b?text=AI+Project" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistem Rekomendasi Buku</h3>
+                            <p class="text-gray-400">Sistem rekomendasi buku berbasis machine learning menggunakan algoritma collaborative filtering.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Scikit-learn</span>
+                                <span>Flask</span>
+                            </div>
+                            <a href="#" class="project-link">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button id="more-projects" class="btn-primary">Lihat Lebih Banyak Project</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Lokasi <span class="text-blue-400">Kampus</span></h2>
+                <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12">Politeknik Negeri Batam - Tempat kami menimba ilmu dan berkarya.</p>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Politeknik Negeri Batam</h3>
+                        <p class="text-gray-300 mb-4">Jl. Ahmad Yani, Batam Center, Kota Batam, Kepulauan Riau 29461</p>
+                        <p class="text-gray-400 mb-6">Politeknik Negeri Batam merupakan perguruan tinggi vokasi yang berfokus pada penerapan ilmu pengetahuan dan teknologi untuk memenuhi kebutuhan industri.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3 text-blue-400"></i>
+                                <div>
+                                    <h4 class="font-bold">Telepon</h4>
+                                    <p class="text-gray-400">+62 778 469856</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-blue-400"></i>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <p class="text-gray-400">info@polibatam.ac.id</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-globe mt-1 mr-3 text-blue-400"></i>
+                                <div>
+                                    <h4 class="font-bold">Website</h4>
+                                    <p class="text-gray-400">www.polibatam.ac.id</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rounded-xl overflow-hidden shadow-2xl h-96">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.290335332283!2d104.0297223147539!3d1.1237472992090902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9897a5d5d0a4b%3A0x7a5c5e7b5a5e5b5e!2sPoliteknik%20Negeri%20Batam!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">TRPL C PAGI</h3>
+                    <p class="text-gray-400">Kelas Teknologi Rekayasa Perangkat Lunak Pagi angkatan 2024 di Politeknik Negeri Batam.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition">Prodi & Jurusan</a></li>
+                        <li><a href="#members" class="text-gray-400 hover:text-blue-400 transition">Anggota</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-blue-400 transition">Project</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Kontak</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                            <span>Politeknik Negeri Batam, Batam Center</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-blue-400"></i>
+                            <span>trplcpagi24@polibatam.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Media Sosial</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon-footer"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon-footer"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 TRPL C PAGI - Politeknik Negeri Batam. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/sidebar.js"></script>
+    <script src="js/gsap-animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
